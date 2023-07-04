@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/chat.css">
+    <title>OneChat</title>
+</head>
+<body>
+    <main>
+        <ul class="navigation-bar contact-listing">
+            <li class="dashboard-list-item">
+                <button id="dashboard-btn">
+                    <div class="dashboard-icon-wrapper">
+                        <img src="../img/dashboard-icon.svg" alt="">
+                    </div>
+                    <div class="dashboard-info">
+                        <h1>Dashboard</h1>
+                    </div>
+                </button>
+            </li>
+            <hr class="separator">
+            <li class="contact-list-item">
+                <div class="contact-icon-wrapper">
+                    <img src="../img/julia-placeholder-icon.png" alt="">
+                </div>
+                <div class="contact-info">
+                    <h1>Julia</h1>
+                    <div>Hello There!</div>
+                </div>
+            </li>
+        </ul>
+        <section class="main-chat">
+            <header class="chat-header">
+                <div class="contact-id">
+                    <div class="cont-icon header-cont-icon">
+                        <img src="../img/julia-placeholder-icon.png" alt="">
+                    </div>
+                    <div class="id-info">
+                       <div class="cont-name header-cont-name">
+                            <h1>Julia</h1>
+                        </div>
+                        <div class="status">
+                            <span class="icon"></span>
+                            <p>Online</p>
+                        </div> 
+                    </div>
+                    
+                </div>
+                <div class="header-tools-container">
+                    <span class="icon header-icon" id="video-call-btn" role="img">
+                        <svg id="video-call-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="36.21364" height="24.32625" viewBox="0 0 36.21364 24.32625"><path d="M34.47188,6.77038a.62755.62755,0,0,0-.71707-.44095,9.218,9.218,0,0,0-4.67793,2.16614c-.00683.00628-.01738.00392-.01738-.00536l0-2.94A4.56361,4.56361,0,0,0,24.50932,1H5.55019A4.56357,4.56357,0,0,0,1,5.55019V18.77606a4.56357,4.56357,0,0,0,4.55019,4.55019H24.50932a4.56357,4.56357,0,0,0,4.55019-4.55019v-2.925a.01576.01576,0,0,1,.02657-.01192,9.22469,9.22469,0,0,0,4.66854,2.15763.62758.62758,0,0,0,.71725-.44087A19.97417,19.97417,0,0,0,34.47188,6.77038Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                    </span>
+                    <span class="icon header-icon" id="audio-call-btn" role="img">
+                        <svg id="audio-call-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="29.77492" height="29.81683" viewBox="0 0 29.77492 29.81683"><path d="M28.77492,24.18133A4.6683,4.6683,0,0,0,24.10663,19.513c-.82223,0-2.19963,1.13248-3.2458,2.31568-5.21737-.55626-10.753-3.88588-12.73344-12.7698,1.26838-1.1438,2.46515-2.73771,2.44833-3.39063A4.71193,4.71193,0,0,0,5.90745,1a4.6601,4.6601,0,0,0-3.825,1.99668h0l0,.00007c-.04107.05865-.07858.11953-.11776.17964C-3.30366,11.25923,14.29726,28.79492,23.557,28.81426c.065.00014-.06541-.005,0,0,.02311.00139-.023-.00116,0,0,.09491.00578-.09654,0,0,0,.03944,0-.0392.001,0,0a5.89417,5.89417,0,0,0,3.36065-.91146l-.0004-.0004A4.65587,4.65587,0,0,0,28.77492,24.18133Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                    </span>
+                    <span class="icon header-icon" id="pin-btn" role="img">
+                        <svg id="pin-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="27.05602" height="27.76312" viewBox="0 0 27.05602 27.76312"><path d="M14.11554,20.42227a48.80794,48.80794,0,0,1,11.16784-6.8472,2.15112,2.15112,0,0,0,.64047-3.48607L16.967,1.13217a2.15112,2.15112,0,0,0-3.48607.64047A48.80827,48.80827,0,0,1,6.63375,12.94049c-1.0665-1.0021-4.07231-1.97317-5.32548-.72A.99668.99668,0,0,0,1.15455,13.604L13.45206,25.90147a.99667.99667,0,0,0,1.38347-.15372C16.0887,24.49459,15.11764,21.48877,14.11554,20.42227Z" fill="#d2bbff" stroke="#d2bbff" stroke-miterlimit="10"/><path d="M3.12132,19.6418h2a0,0,0,0,1,0,0v7a1,1,0,0,1-1,1h0a1,1,0,0,1-1-1v-7a0,0,0,0,1,0,0Z" transform="translate(17.92438 4.01031) rotate(45)" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                    </span>
+                    <form action="" class="search-form" onsubmit="return false;">
+                        <input type="search" id="search-bar" placeholder="Search">
+                        <button id="search-btn">
+                            <span class="icon search-icon">
+                                <svg id="b6fa95c8-c287-4a6f-b053-addf830830d4" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="19.49037" height="20.58513" viewBox="0 0 19.49037 20.58513"><path d="M1,8.03721a7.03742,7.03742,0,1,1,7.03721,7.0372A7.03721,7.03721,0,0,1,1,8.03721Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><line x1="12.52801" y1="13.45547" x2="18.49037" y2="19.58513" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </header>
+            <div id="chat-screen">
+                <div class="row">
+                    <div class="msg-bubble contact-msg">
+                        <span class="msg-content">
+                            <!-- <p> -->
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <!-- </p> -->
+                        </span>
+                        <span class="tail"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg-bubble contact-msg">
+                        <span class="msg-content">
+                            <!-- <p> -->
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <!-- </p> -->
+                        </span>
+                        <span class="tail"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="msg-bubble your-msg">
+                        <span class="msg-content">
+                            <!-- <p> -->
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <!-- </p> -->
+                        </span>
+                        <span class="tail"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-msg-field">
+                <button class="attach-btn">
+                    <span class="icon icon-flex">
+                        <svg id="attach-icon" data-name="Layer 5" xmlns="http://www.w3.org/2000/svg" width="24.90296" height="25.78932" viewBox="0 0 24.90296 25.78932"><line x1="2.2583" y1="12.89466" x2="22.64466" y2="12.89466" fill="none" stroke="#884f98" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.51659"/><line x1="12.45148" y1="23.53102" x2="12.45148" y2="2.2583" fill="none" stroke="#884f98" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.51659"/></svg>
+                    </span>
+                </button>
+                <!-- <form action="" class="msg-form" autocomplete="off" onsubmit="return false;"> -->
+                <textarea name="your-message" class="textarea-default" id="msg-input" alt="Sua messagem aqui" placeholder="Sua Messagem" autocomplete="off" rows="1"></textarea>
+                <button id="msg-submit-btn">
+                    <span><svg id="a9957a0c-9b73-43a8-8f32-7249e08f3a0f" data-name="Layer 5" xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30"><polygon points="40 15 0 0 0 12.786 28.182 15 0 17.214 0 30 40 15"/></svg></span>
+                </button>
+                <!-- </form> -->
+            </div>
+        </section>
+        <nav class="navigation-bar config-bar">
+            <ul class="menu">
+                <li class="you-btn">
+                    <div class="you-icon">
+                        <img src="../img/julia-placeholder-icon.png" alt="Seu ícone">
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <button id="notif-btn" class="menu-btn">
+                        <span class="icon menu-icon">
+                            <svg id="e21cf9d9-e215-4db5-929e-d1fea9ac3cab" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24.57011" height="28.73449" viewBox="0 0 24.57011 28.73449"><path d="M23.32263,20.03276C21.037,18.093,19.95678,16.81331,20.082,8.14913,20.13868,4.21925,16.63611,1,12.28428,1,7.1545,1,4.50485,4.793,4.49732,9.42574c0,7.51824-1.083,8.76706-3.24914,10.60581a.70088.70088,0,0,0,.53559,1.22317H22.78543A.70074.70074,0,0,0,23.32263,20.03276Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><path d="M8.43813,24.25472l-.02268.02c-.2587,1.87393,1.57319,3.45975,3.86926,3.45975,2.29618,0,4.12807-1.58582,3.86936-3.45975l-.02268-.02Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                        </span>
+                    </button>
+                </li>
+                <li class="menu-item">
+                    <button id="fav-btn" class="menu-btn">
+                        <span class="icon menu-icon">
+                            <svg id="b7f90fb0-3989-46db-b3f8-108a872c7434" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24.64" height="21.60461" viewBox="0 0 24.64 21.60461"><path d="M12.136,3.2046c-3.94232-5.92189-23.06194.15549.184,17.4,23.24594-17.24452,4.12632-23.3219.184-17.4A.21994.21994,0,0,1,12.136,3.2046Z" fill="none" stroke="#d2bbff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </main>
+    <div id="dashboard-overlay">
+
+        <div class="online-list">
+            <ul class="online-friend-list">
+                <div class="online-list-header">
+                    <h1>Amigos</h1>
+                    <div class="online-header-counter">Online - <span id="online-num">3</span></div>
+                </div>
+                <hr>
+                <li class="online-list-item">
+                    <div class="online-img-wrapper">
+                        <img src="../img/julia-placeholder-icon.png" alt="">
+                    </div>
+                    <p>
+                        <span>Julia</span>
+                    </p>
+                    <button class="dot-btn">
+                        <div>
+                            <span class="icon online-item-icon">
+                                <svg id="baf3ccfc-fba2-41b1-ad09-884ce5624e5e" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" width="3.40104" height="14.04779" viewBox="0 0 3.40104 14.04779"><circle cx="1.70052" cy="7.0239" r="1.70052" fill="#cbcbcb"/><circle cx="1.70052" cy="12.34727" r="1.70052" fill="#cbcbcb"/><circle cx="1.70052" cy="1.70052" r="1.70052" fill="#cbcbcb"/></svg>
+                            </span>
+                        </div>
+                    </button>
+                </li>
+                <hr>
+            </ul>
+        </div>
+
+        <div class="config-container">
+
+            <div class="profile-slide">
+                <div class="user-info full-width-card">
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label for="username">Nome de Usuário</label>
+                            <input type="text" id="username" value="Iza.Rocha" disabled>
+                        </div>
+                        <button id="edit-username" class="edit-btn">
+                            <span class="icon edit-icon">
+<svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label>Seu Nome</label>
+                            <input type="text" id="name" value="Izabela Rocha" disabled>
+                        </div>
+                        <button id="edit-name" class="edit-btn">
+                            <span class="icon edit-icon">
+<svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label>Seu Recado</label>
+                            <input type="text" id="tag" value="Sonhando e vivendo" disabled>
+                        </div>
+                        <button id="edit-tag" class="edit-btn">
+                            <span class="icon edit-icon">
+<svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="horizontal-side-by-side">
+                    <div class="name-options-container">
+                        <h1>Nome de Exibição</h1>
+                        <div class="radio-container">
+                            <div class="radio-check">
+                                <label for=""><span id="username-display-option">Iza.Rocha</span></label>
+                                <input type="radio" name="display" id="display-username" value="username" class="display-radio" checked>
+                            </div>
+                            <div class="radio-check">
+                                <label for=""><span id="name-display-option">Izabela Rocha</span></label>
+                                <input type="radio" name="display" id="display-name" value="name" class="display-radio">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pfp-options-container">
+                        <h1>Foto de Perfil</h1>
+                        <div class="pfp-btn-wrapper">
+                            <div class="pfp-wrapper">
+                                <img id="pfp-changeable" src="../img/julia-placeholder-icon.png" alt="">
+                                <button id="edit-pfp" class="edit-btn">
+                                    <span class="icon edit-icon">
+        <svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="horizontal-full-width description-option-container">
+                    <h1>Descrição</h1>
+                    <textarea name="description" class="textarea-default" id="description-field" rows="6" placeholder="Sobre mim..."></textarea>
+                </div>
+            </div>
+
+            <div class="theme-slide">
+
+            </div>
+            
+            <div class="config-slide">
+
+            </div>
+
+        </div>
+
+        <div class="profile-display">
+            <button type="button" id="return-btn">
+                <span class="icon return-icon">
+                    <svg id="ae8fd9d4-d257-434b-85a8-3abb51914ffd" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="29.99999" height="22.49999" viewBox="0 0 29.99999 22.49999"><polygon points="30 22.5 30 22.5 25.5 11.25 30 0 30 0 0 11.647 30 22.5"/></svg>
+                </span>
+                <h1>Voltar</h1>
+            </button>
+            <div class="user-info-display">
+                <img src="../img/julia-placeholder-icon.png" id="user-icon" alt="">
+                <h1>
+                    <span id="display-name">Iza.Rocha</span>
+                </h1>
+                <span id="display-tag">Sonhando e vivendo</span>
+                <span id="status-icon"></span>
+            </div>
+            <div class="config-selector">
+                <div class="radio-btn">
+                    <input type="radio" name="config" id="option-profile" value="profile" class="config-radio" checked>
+                    <label for="option-profile">Meu Perfil</label>
+                </div>
+
+                <div class="radio-btn">
+                    <input type="radio" name="config" id="option-theme" value="theme" class="config-radio">
+                    <label for="option-theme">Aparência</label>
+                </div>
+                
+                <div class="radio-btn">
+                    <input type="radio" name="config" id="option-config" value="config" class="config-radio">
+                    <label for="option-config">Configurações</label>
+                </div>
+            </div>
+            <hr>
+            <button id="quit-btn">
+                Sair
+            </button>
+        </div>
+
+    </div>
+
+    <script src="../js/main-chat.js"></script>
+
+</body>
+</html>

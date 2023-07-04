@@ -1,0 +1,123 @@
+@import url(style.css);
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: normal;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+main svg {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+#signup, #login {
+    display: flex;
+    flex-direction: column;
+    background-color: #370044;
+    color: #ecccfe;
+    padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+    border-radius: 1rem;
+    z-index: 100;
+    font-size: 1rem;
+    width: 33%;
+    animation: 0.3s ease-in-out 0s 1 scaleDown;
+    /* transform: translateX(10px); */
+    /* transition: all 0.2s ease-in-out; */
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8rem;
+    
+}
+
+.text-input {
+    width: 100%;
+    background-color: #100011;
+    color: #ecccfec4;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    padding: 0.7rem;
+    margin-top: 0.2rem;
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+#signup-btn, #login-btn {
+    background-color: #ecccfe;
+    color: #370044;
+    width: 100%;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    transition: all 0.1s ease-in-out;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.welcome-text {
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+#signup-btn:hover, #login-btn:hover {
+    background-color: #cdb1dd;
+}
+
+.login-link-wrapper, .signup-link-wrapper, .forgot-password{
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    
+}
+
+.login-link-wrapper p, .signup-link-wrapper p  {
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.login-link-wrapper span, .signup-link-wrapper span {
+    opacity: 1;
+}
+
+#login-link, #signup-link, #forgot-password, .forgot-password  {
+    display: inline-block;
+    color: #b28bfc;
+}
+
+@media screen and (max-width: 425px) {
+    #signup, #login {
+        font-size: 1.2rem;
+        padding: 2rem 1.2rem;
+    }
+    .text-input {
+        font-size: 1.1rem;
+        width: 23rem;
+        padding: 0.5rem;
+    }
+    #signup-btn, #login-btn {
+        font-size: 1.1rem;
+    }
+    .login-link-wrapper, .signup-link-wrapper {
+        font-size: 0.8rem;
+    }
+}
