@@ -139,7 +139,7 @@ header a:hover {
 #main-container {
     display: flex;
     flex-direction: column;
-    min-height: 88vh;
+    min-height: 80vh;
     background-color: #100011;
     color: #ecccfe;
     overflow-x: hidden;
