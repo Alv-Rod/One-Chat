@@ -4,12 +4,14 @@ body {
     height: 100%;
     width: 100%;
     color: #cbcbcb;
+    overflow: hidden;
 }
 
 :root {
     --bg-main: #151516;
     --bg-light: #1f1f21;
     --bg-detail-light: #2b2b2d;
+    --bg-detail-lighter: #363638;
     --bg-detail-dark: #0f0f0f;
     --bubble-received: #1f1f26;
     --bubble-sender: #461a7a;
@@ -99,6 +101,7 @@ button {
 
 .dashboard-list-item button, .contact-list-item {
     display: flex;
+    align-items: center;
     position: relative;
     color: var(--text);
     justify-content: flex-start;
@@ -325,6 +328,15 @@ input[type="search"]::-webkit-search-results-decoration {
     margin: 0.5rem auto;
 }
 
+@keyframes dashboardScaleUp {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 #dashboard-overlay {
     display: none;
     position: absolute;
@@ -333,6 +345,7 @@ input[type="search"]::-webkit-search-results-decoration {
     right: 0;
     top: 0;
     background-color: var(--bg-main);
+    animation: 0.4s ease-in-out dashboardScaleUp;
 }
 
 input[type=radio] {
@@ -351,6 +364,10 @@ label {
     padding: 1rem;
 }
 
+.online-list hr {
+    border-color: var(--bg-light);
+}
+
 .online-friend-list {
     display: flex;
     flex-direction: column;
@@ -365,7 +382,13 @@ label {
 
 .online-list li {
     display: flex;
+    align-items: center;
     width: 100%;
+    margin: 0.3rem 0;
+}
+
+.online-list li p {
+    margin-left: 0.5rem;
 }
 
 .dot-btn {
@@ -576,6 +599,16 @@ label {
     flex-direction: column;
 }
 
+@keyframes slideScaleUp {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* animation: 0.1s ease-in slideScaleUp; */
+
 .profile-slide {
     display: flex;
     flex-direction: column;
@@ -689,7 +722,93 @@ label {
 }
 
 #description-field {
-    
     width: 100%;
     background-color: var(--bg-detail-light);
+}
+
+.theme-slide {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.theme-slide h1 {
+    font-size: 1.4rem;
+}
+
+/* .theme-btn {
+    display: flex;
+    background-color: var(--bg-detail-light);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+} */
+
+.theme-slide p {
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+.theme-radio + label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-detail-light);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--bg-detail-light);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.theme-img-card {
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: var(--bg-detail-lighter);
+    border-radius: 0.5rem;
+}
+
+.theme-btn label img {
+    width: 120px;
+}
+
+
+
+.config-radio + label {
+    background-color: var(--bg-detail-light);
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.config-radio:checked + label {
+    background-color: var(--accent);
+    color: #151516;
+    width: 100%;
+}
+
+.config-radio:hover + label {
+    background-color: var(--bg-main);
+}
+
+.config-radio:checked:hover + label {
+    background-color: var(--accent-before);
+}
+
+.theme-radio:checked + label {
+    border-color: var(--accent);
+}
+
+.theme-radio:hover + label {
+    background-color: var(--bg-main);
+    border-color: var(--bg-main);
+}
+
+.theme-radio:checked:hover + label {
+    background-color: var(--bg-main);
+    border-color: var(--accent-before);
 }

@@ -96,6 +96,7 @@ dashBtn.addEventListener('click', function (event) {
     let sideBar = document.querySelector('.contact-listing');
     sideBar.classList.remove('contact-listing');
     sideBar.classList.add('contact-listing-disabled');
+    sideBar.style.transitionProperty = "none"
 })
 
 if (dashVisible === true) {
@@ -103,3 +104,23 @@ if (dashVisible === true) {
     
 }
 
+
+const radioNodeList = document.querySelectorAll('.config-radio');
+const slideNodeList = document.querySelectorAll('.config-container > div');
+
+radioNodeList.forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        const selectedRadio = event.target.value;
+
+        slideNodeList.forEach(slide => {
+            slide.style.display = 'none';
+        })
+
+        const selectedSlide = document.querySelector(`.${selectedRadio}-slide`);
+        if (selectedSlide) {
+            selectedSlide.style.display = "flex";
+            selectedSlide.style.animation = "0.1s ease-in slideScaleUp"
+        }
+    })
+
+})
