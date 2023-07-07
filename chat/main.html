@@ -12,9 +12,12 @@
     <main>
         <ul class="navigation-bar contact-listing">
             <li class="dashboard-list-item">
-                <button id="dashboard-btn">
+                <button class="dashboard-btn return-btn">
                     <div class="dashboard-icon-wrapper">
-                        <img src="../img/dashboard-icon.svg" alt="">
+                        <img id="dashboard-icon" src="../img/dashboard-icon.svg" alt="">
+                        <span class="icon return-icon">
+                            <svg id="ae8fd9d4-d257-434b-85a8-3abb51914ffd" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="29.99999" height="22.49999" viewBox="0 0 29.99999 22.49999"><polygon points="30 22.5 30 22.5 25.5 11.25 30 0 30 0 0 11.647 30 22.5"/></svg>
+                        </span>
                     </div>
                     <div class="dashboard-info">
                         <h1>Dashboard</h1>
@@ -170,6 +173,7 @@
         <div class="config-container">
 
             <div class="profile-slide">
+                <h1>Perfil</h1>
                 <div class="user-info full-width-card">
                     <div class="info-container horizontal-full-width">
                         <div class="text-info vertical-info">
@@ -241,9 +245,9 @@
             </div>
 
             <div class="theme-slide">
-                <h1 class="theme">Aparência</h1>
+                <h1 class="theme-heading">Aparência</h1>
                 <div class="theme-btn">
-                    <input type="radio" name="theme" id="dark" value="dark" class="theme-radio">
+                    <input type="radio" name="theme" id="dark" value="dark" class="theme-radio" checked>
                     <label for="dark">
                         <div class="theme-info">
                             <h1>Tema Escuro</h1>
@@ -284,23 +288,92 @@
                 <div class="contrast-option-container">
                     <h1>Cor de Contraste</h1>
                     <p>Usa uma cor de contraste nas suas mensagens.</p>
-                    <div class="contrast-radio-selector radio-check">
-                        <label for="">Ativado</label>
-                        <input type="radio" name="contrast" id="" value="active" class="contrast-radio" checked>
-                        <label for="">Desativado</label>
-                        <input type="radio" name="contrast" id="" value="disabled" class="contrast-radio">
+                    <div class="contrast-radio-selector radio-container">
+                        <div class="radio-check">
+                            <label for="">Ativado</label>
+                            <input type="radio" name="contrast" id="contrast-activated" value="activated" class="contrast-radio" checked>
+                        </div>
+                        <div class="radio-check">
+                            <label for="">Desativado</label>
+                            <input type="radio" name="contrast" id="contrast-deactivated" value="deactivated" class="contrast-radio">
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="config-slide">
+                <h1>Configurações e Acessibilidade</h1>
+                <div class="user-info full-width-card">
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" value="izamail@mail.com" disabled>
+                        </div>
+                        <button id="edit-email" class="edit-btn">
+                            <span class="icon edit-icon">
+                                <svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label for="tel">Telefone</label>
+                            <input type="tel" id="tel" value="+00 00 123-456-789" disabled>
+                        </div>
+                        <button id="edit-tel" class="edit-btn">
+                            <span class="icon edit-icon">
+                                <svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+
+                    <div class="info-container horizontal-full-width">
+                        <div class="text-info vertical-info">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" value="123456789123" disabled>
+                        </div>
+                        <button id="edit-password" class="edit-btn">
+                            <span class="icon edit-icon">
+                                <svg id="e8ead2e3-d337-4ae7-a379-9c677be1950e" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="25.61007" height="25.61007" viewBox="0 0 25.61007 25.61007"><path d="M0,25.61007H0l1.79673-7.11721c0,2.176,2.87647,5.32048,5.32047,5.32048Z" fill="#140019"/><path d="M25.48043,5.45012C26.50206,4.42849,21.18158-.892,20.15995.12964L3.24476,17.04485c.05429,2.29489,2.76379,5.26,5.32047,5.32048Z" fill="#140019"/></svg>                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="full-width-card acessability-options-container">
+                    <div class="font-size-option">
+                        <label for="font-slider"></label>
+                        <h1>Tamanho da Fonte</h1>
+                        <p>Altera o tamanho da fonte dos textos para maior legibilidade</p>
+                        <input type="range" name="font-slider" id="font-slider" min="1" max="5" step="1" list="font-options">
+                        <!-- <datalist id="font-options">
+                            <option value="1" label="Menor"></option>
+                            <option value="2" label="Pequeno"></option>
+                            <option value="3" label="Padrão"></option>
+                            <option value="4" label="Grande"></option>
+                            <option value="5" label="Maior"></option>
+                        </datalist> -->
+                    </div>
+                    <div class="high-contrast-option">
+                        <h1>Texto de Alto Contraste</h1>
+                        <p>Aumenta o contraste do texto para maior legibilidade</p>
+                        <div class="text-contrast-radio-selector radio-container">
+                            <div class="radio-check">
+                                <label for="">Ativado</label>
+                                <input type="radio" name="text-contrast" id="text-contrast-activated" value="activated" class="text-contrast-radio">
+                            </div>
+                            <div class="radio-check">
+                                <label for="">Desativado</label>
+                                <input type="radio" name="text-contrast" id="text-contrast-deactivated" value="deactivated" class="text-contrast-radio" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
         </div>
 
         <div class="profile-display">
-            <button type="button" id="return-btn">
+            <button type="button" class="return-btn profile">
                 <span class="icon return-icon">
                     <svg id="ae8fd9d4-d257-434b-85a8-3abb51914ffd" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="29.99999" height="22.49999" viewBox="0 0 29.99999 22.49999"><polygon points="30 22.5 30 22.5 25.5 11.25 30 0 30 0 0 11.647 30 22.5"/></svg>
                 </span>

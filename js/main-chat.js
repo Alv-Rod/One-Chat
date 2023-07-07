@@ -53,9 +53,7 @@ function scrollToMsg(msgSpan) {
     });
 }
 
-
 var textArea = document.getElementById("msg-input");
-
 
 textArea.addEventListener("input", function textAreaResize() {
     textArea.style.height = 'auto';
@@ -79,32 +77,58 @@ textArea.addEventListener("keydown", function (event) {
     }
 })
 
+//codificação do overlay dashboard
 var dashBtn = document.getElementById('dashboard-btn');
-var dashVisible = false;
-
-if (dashVisible === true) {
-    dashBtn.disabled = true;
-} else {
-    dashBtn.disabled = false;
-}
+var returnBtnsList = document.getElementsByClassName('return-btn');
+var dashboardIcon = document.querySelector('#dashboard-icon');
+var returnIcon = document.querySelector('.dashboard-icon-wrapper .return-icon');
+var sideBar = document.querySelector('.contact-listing');
 
 dashBtn.addEventListener('click', function (event) {
-    let dashboardOverlay = document.getElementById('dashboard-overlay');
+    var dashboardOverlay = document.getElementById('dashboard-overlay')
     dashboardOverlay.style.display = 'flex';
-    dashVisible = true;
 
-    let sideBar = document.querySelector('.contact-listing');
     sideBar.classList.remove('contact-listing');
     sideBar.classList.add('contact-listing-disabled');
     sideBar.style.transitionProperty = "none"
+
+    dashBtn.classList.remove('dashboard-btn');
+    dashboardIcon.style.display = 'none';
+    returnIcon.style.display = 'block';
 })
 
-if (dashVisible === true) {
-    document.getElementById('return-btn').addEventListener('click');
-    
+for (let i = 0; i < returnBtnsList.length; i++) {
+    returnBtnsList[i].addEventListener('click', () => {
+        var dashboardOverlay = document.getElementById('dashboard-overlay')
+        dashboardOverlay.style.display = 'none';
+
+        sideBar.classList.remove('contact-listing-disabled');
+        sideBar.classList.add('contact-listing');
+        sideBar.style.transitionProperty = "width"
+
+        dashBtn.removeAttribute('class');
+        dashBtn.id = 'dashboard-btn';
+        dashboardIcon.style.display = 'block';
+        returnIcon.style.display = 'none';
+    })
 }
+// returnBtnsList.forEach((returnBtn => {
+//     returnBtn.addEventListener('click', () => {
+//         var dashboardOverlay = document.getElementById('dashboard-overlay')
+//         dashboardOverlay.style.display = 'none';
 
+//         sideBar.classList.remove('contact-listing-disabled');
+//         sideBar.classList.add('contact-listing');
+//         sideBar.style.transitionProperty = "width"
 
+//         dashBtn.removeAttribute('class');
+//         dashBtn.id = 'dashboard-btn';
+//         dashboardIcon.style.display = 'block';
+//         returnIcon.style.display = 'none';
+//     })
+// }))
+
+//seleção da janela de configuração atual
 const radioNodeList = document.querySelectorAll('.config-radio');
 const slideNodeList = document.querySelectorAll('.config-container > div');
 
@@ -119,8 +143,8 @@ radioNodeList.forEach(radio => {
         const selectedSlide = document.querySelector(`.${selectedRadio}-slide`);
         if (selectedSlide) {
             selectedSlide.style.display = "flex";
-            selectedSlide.style.animation = "0.1s ease-in slideScaleUp"
+            selectedSlide.style.animation = "0.2s ease-in slideScaleUp"
         }
     })
-
 })
+
