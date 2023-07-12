@@ -41,6 +41,6 @@ signupBtn.addEventListener('click', function signUser() {
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
 
-    location = 'chat/main';
+    location = './chat/main';
 })
 
