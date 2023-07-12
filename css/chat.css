@@ -949,6 +949,9 @@ option {
         bottom:0; right:0;
         /* width: 100%; */
     }
+    .mobile {
+        display: flex;
+    }
     .msg-content {
         font-size: 1rem;
     }
@@ -956,7 +959,15 @@ option {
         justify-content: flex-start;
         margin: 0;
     }
-    #chat-screen {
+    #menu-button {
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem;
+    }
+    #menu-button svg {
+        width: 25px;
+        height: auto;
+        stroke: var(--accent);
     }
     .main-chat {
         height: 100%;
@@ -965,13 +976,51 @@ option {
     .msg-bubble {
         max-width: 300px;
     }
-
-    .navigation-bar {
+    @keyframes navBarSlideIn {
+        0% {
+            width: 0%
+        }
+        100% {
+            width: 50%;
+        }
+    }
+    .navigation-bar.contact-listing {
         display: none;
+        width: 240px;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        align-items: baseline;
+        padding-left: 0.35rem;
+        animation: navBarSlideIn 0.2s ease-in-out;
+    }
+    .contact-listing .dashboard-info, .contact-listing .contact-info {
+        position: absolute;
+        left: 3rem;
+        visibility: visible;
+        opacity: 1;
+        /* margin-left: 0.5rem; */
+    }
+    
+    .contact-listing:hover .contact-icon-wrapper, .contact-listing:hover .dashboard-icon-wrapper {
+        transform: none;
+    }
+
+    .contact-listing .separator {
+        width: 90%;
     }
 
     .header-tools-container {
         display: none;
     }
-    
+
+    #dashboard-overlay {
+        width: 100%;
+    }
+    .online-list {
+        display: none;
+    }
+    .config-container {
+        width: 100%;
+    }
 }
