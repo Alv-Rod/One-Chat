@@ -9,6 +9,11 @@
     }
 }
 
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -23,7 +28,7 @@ main {
 
 main svg {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: auto;
@@ -62,6 +67,23 @@ main svg {
     margin-top: 0.2rem;
     font-weight: 100;
     font-size: 0.9rem;
+}
+
+@keyframes errorFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.error-msg {
+    display: none;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin-left: 0.5rem;
+    animation: errorFadeIn 0.4s ease-in-out;
 }
 
 #signup-btn, #login-btn {
@@ -105,8 +127,12 @@ main svg {
     color: #b28bfc;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
+    main {
+        height: 100%;
+    }
     #signup, #login {
+        
         width: 90%;
         font-size: 1.2rem;
         padding: 2rem 1.2rem;

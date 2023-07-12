@@ -67,6 +67,10 @@ button {
     cursor: pointer;
 }
 
+.mobile {
+    display: none;
+}
+
 .icon svg {
     stroke: #d2bbff;
     width: 30px;
@@ -79,9 +83,17 @@ button {
     /* padding: 0.2rem 0.5rem; */
 }
 
-.navigation-bar .return-icon {
+.navigation-bar .return-btn {
     display: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
+
+.navigation-bar .return-icon {
+    display: flex;
+    margin: 0;
+}
+
 
 .contact-listing, .contact-listing-disabled {
     display: flex;
@@ -93,6 +105,12 @@ button {
     transition: width 0.5s ease-in-out;
     padding: 1rem 0;
 }
+
+.contact-listing-disabled {
+    transition: none;
+}
+
+
 
 .contact-icon-wrapper, .dashboard-icon-wrapper {
     display: flex;
@@ -109,6 +127,13 @@ button {
     position: relative;
     color: var(--text);
     justify-content: flex-start;
+}
+
+.dashboard-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .dashboard-info, .contact-info {
@@ -341,6 +366,21 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 }
 
+@keyframes hideDashboard {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* div {
+    animation: 0.4s ease-in-out hideDashboard;
+} */
+
 #dashboard-overlay {
     display: none;
     position: absolute;
@@ -350,6 +390,10 @@ input[type="search"]::-webkit-search-results-decoration {
     top: 0;
     background-color: var(--bg-main);
     animation: 0.4s ease-in-out dashboardScaleUp;
+}
+
+#dashboard-overlay.hide-overlay-animation {
+    animation: 0.4s ease-in-out hideDashboard;
 }
 
 input[type=radio] {
@@ -888,4 +932,46 @@ option {
     .theme-info p {
         display: none;
     }
+}
+
+@media screen and (max-width: 425px) {
+    html {
+        min-height: 100%;
+        height: 100%;
+    }
+    html ::-webkit-scrollbar {
+        display: none;
+    }
+    main {
+        position:absolute;
+        overflow:hidden;
+        top:0;   left:0;
+        bottom:0; right:0;
+        /* width: 100%; */
+    }
+    .msg-content {
+        font-size: 1rem;
+    }
+    .chat-header {
+        justify-content: flex-start;
+        margin: 0;
+    }
+    #chat-screen {
+    }
+    .main-chat {
+        height: 100%;
+        margin: 0;
+    }
+    .msg-bubble {
+        max-width: 300px;
+    }
+
+    .navigation-bar {
+        display: none;
+    }
+
+    .header-tools-container {
+        display: none;
+    }
+    
 }

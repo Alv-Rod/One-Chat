@@ -12,15 +12,19 @@
     <main>
         <ul class="navigation-bar contact-listing">
             <li class="dashboard-list-item">
-                <button class="dashboard-btn return-btn">
+                <button class="dashboard-btn">
                     <div class="dashboard-icon-wrapper">
                         <img id="dashboard-icon" src="../img/dashboard-icon.svg" alt="">
-                        <span class="icon return-icon">
-                            <svg id="ae8fd9d4-d257-434b-85a8-3abb51914ffd" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="29.99999" height="22.49999" viewBox="0 0 29.99999 22.49999"><polygon points="30 22.5 30 22.5 25.5 11.25 30 0 30 0 0 11.647 30 22.5"/></svg>
-                        </span>
                     </div>
                     <div class="dashboard-info">
                         <h1>Dashboard</h1>
+                    </div>
+                </button>
+                <button class="return-btn">
+                    <div class="return-icon-wrapper">
+                        <span class="icon return-icon">
+                            <svg id="ae8fd9d4-d257-434b-85a8-3abb51914ffd" data-name="Isolation Mode" xmlns="http://www.w3.org/2000/svg" width="29.99999" height="22.49999" viewBox="0 0 29.99999 22.49999"><polygon points="30 22.5 30 22.5 25.5 11.25 30 0 30 0 0 11.647 30 22.5"/></svg>
+                        </span>
                     </div>
                 </button>
             </li>
@@ -37,6 +41,7 @@
         </ul>
         <section class="main-chat">
             <header class="chat-header">
+                <div id="menu-button" class="mobile"></div>
                 <div class="contact-id">
                     <div class="cont-icon header-cont-icon">
                         <img src="../img/julia-placeholder-icon.png" alt="">
@@ -411,7 +416,7 @@
 
     </div>
 
-    <script src="../js/main-chat.js"></script>
+    <script src="../js/main-chat.js" type="module"></script>
 
 </body>
 </html>
