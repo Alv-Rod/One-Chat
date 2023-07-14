@@ -20,6 +20,11 @@ textArea.addEventListener("keydown", function (event) {
     }
 })
 
+textArea.addEventListener("submit", function (event) {
+    event.preventDefault();
+    msg.submitMessage(textArea);
+})
+
 document.querySelector('.dashboard-btn').addEventListener('click', showDashboard);
 
 const radioNodeList = document.querySelectorAll('.config-radio');
