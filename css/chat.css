@@ -1012,7 +1012,9 @@ option {
     .header-tools-container {
         display: none;
     }
-
+    .navigation-bar.config-bar {
+        display: none;
+    }
     #dashboard-overlay {
         width: 100%;
         display: none;
