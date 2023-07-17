@@ -8,7 +8,8 @@ let textArea = document.querySelector('#msg-input');
 textArea.addEventListener('input', textAreaResize)
 
 const submitButton = document.getElementById("msg-submit-btn");
-submitButton.addEventListener('click', () =>{
+submitButton.addEventListener('click', (event) =>{
+    event.preventDefault()
     msg.submitMessage(textArea);
 });
 

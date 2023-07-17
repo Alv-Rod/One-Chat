@@ -1,19 +1,39 @@
-import { loginEvent } from "./login";
-import { signupEvent } from "./signup";
+import { loginEvent } from "./login.js";
+import { signupEvent } from "./signup.js";
 
 let signupBtn = document.querySelector('#signup-btn');
-signupBtn.addEventListener('click', function signUser() {
-    authUser()
+signupBtn.addEventListener('click', function () {
+    authSignup();
 })
 
-
-function authUser() {
-    if (sessionStorage.getItem('email') === null) {
+function authSignup() {
+    let userObject = JSON.parse(sessionStorage.getItem('userObject'));
+    console.log(userObject);
+    const userName = document.querySelector('#username');
+    const email = document.querySelector('#email');
+    console.log(userName.value)
+    if (sessionStorage.getItem('userObject') === null) {
         signupEvent();
     } else {
-        location = './signup';
+        if (userName.value !== userObject.userName && email.value !== userObject.email) {
+            console.log('here')
+            console.log('result' + userName.value == userObject.userName)
+            let signedUp = signupEvent();
+            if (signedUp) {
+                location = 'chat/main.html';
+            } else {
+                return;
+            }
+        } else {
+            console.log('here')
+            let signedInMessage = document.querySelector('#signed-in-msg');
+            signedInMessage.textContent = 'E-mail ou Nome de usuário já registrado';
+            signedInMessage.style.display = 'inline';
+        }
     }
 }
+
+//sessionStorage.clear()
 
 // function authUser(userObject, operation) {
 //     if (operation === 'signup') {

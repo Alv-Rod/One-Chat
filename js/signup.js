@@ -1,18 +1,24 @@
-const userName = document.querySelector('#username').value;
-const email = document.querySelector('#email').value;
-const password = document.querySelector('#password').value;
+import { signupErrorHandling } from "./signup-handler.js";
+
+const userName = document.querySelector('#username');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
 
 export function signupEvent() {
-    let userObject = {
-        userName: userName,
+    const userObject = {
+        userName: userName.value,
         name: null,
-        email: email,
-        password: password
+        email: email.value,
+        password: password.value
     }
-    let signupSucessful = signupErrorHandling(user);
+    let signupSucessful = signupErrorHandling(userObject);
+    console.log(signupSucessful)
     if (signupSucessful) {
+        console.log(userObject)
         sessionStorage.setItem('userObject', JSON.stringify(userObject));
-    } else {
-        
+        return true;
+    }
+    else {
+        return false;
     }
 }

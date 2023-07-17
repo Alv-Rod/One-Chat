@@ -34,12 +34,24 @@ main svg {
     height: auto;
 }
 
+.logo-anchor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-anchor h1 {
+    font-size: 1rem;
+    opacity: 0.8;
+    /* margin-left: 0.5rem; */
+}
+
 #signup, #login {
     display: flex;
     flex-direction: column;
     background-color: #370044;
     color: #ecccfe;
-    padding: 1.4rem 1.2rem 1.2rem 1.2rem;
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
     border-radius: 1rem;
     z-index: 100;
     font-size: 1rem;
@@ -135,7 +147,7 @@ main svg {
         
         width: 90%;
         font-size: 1.2rem;
-        padding: 2rem 1.2rem;
+        padding: 1rem 1.2rem 2rem 1.2rem;
     }
     .text-input {
         font-size: 1.1rem;
